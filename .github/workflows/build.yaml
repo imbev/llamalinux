@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y podman
       - run: ./build.sh
       - run: podman login ghcr.io -u imbev -p ${{ secrets.GITHUB_TOKEN }}
